@@ -20,7 +20,7 @@ services:
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    startCommand: npx serve -s dist -l 3000
+    startCommand: npm start
     envVars:
       - key: VITE_SOCKET_URL
         value: https://live-streaming-backend.onrender.com
