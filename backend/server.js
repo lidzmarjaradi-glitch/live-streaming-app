@@ -108,7 +108,9 @@ io.on('connection', (socket) => {
 
         streamActive = true;
         broadcastStreamStatus();
-        io.to([...viewers]).emit('stream-started');
+        for (const id of viewers) {
+            io.to(id).emit('stream-started');
+        }
     });
 
     socket.on('stop-stream', () => {
