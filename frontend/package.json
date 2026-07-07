@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
+        "build": "echo \"Skipping build (prebuilt dist)\"",
         "preview": "vite preview",
         "start": "node server.js"
     },
