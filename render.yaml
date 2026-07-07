@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: live-streaming-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: CLIENT_URL
+        value: https://your-frontend-app.onrender.com
