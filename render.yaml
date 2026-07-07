@@ -19,7 +19,7 @@ services:
     env: node
     plan: free
     rootDir: frontend
-    buildCommand: npm install && ./node_modules/.bin/vite build && npm install --production
+    buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
       - key: VITE_SOCKET_URL
