@@ -19,7 +19,7 @@ services:
     env: node
     plan: free
     rootDir: frontend
-    buildCommand: npm ci && npx vite build
+    buildCommand: echo "Using prebuilt dist"
     startCommand: npm start
     envVars:
       - key: VITE_SOCKET_URL
