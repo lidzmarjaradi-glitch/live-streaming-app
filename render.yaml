@@ -9,5 +9,18 @@ services:
     envVars:
       - key: PORT
         value: 10000
+      - key: NODE_ENV
+        value: production
       - key: CLIENT_URL
-        value: https://your-frontend-app.onrender.com
+        value: ${RENDER_EXTERNAL_HOSTNAME}
+
+  - type: static
+    name: live-streaming-frontend
+    env: static
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_SOCKET_URL
+        value: https://live-streaming-backend.onrender.com
