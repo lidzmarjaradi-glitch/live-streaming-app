@@ -14,13 +14,13 @@ services:
       - key: CLIENT_URL
         value: ${RENDER_EXTERNAL_HOSTNAME}
 
-  - type: static
+  - type: web
     name: live-streaming-frontend
-    env: static
+    env: node
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    startCommand: npx serve -s dist -l 3000
     envVars:
       - key: VITE_SOCKET_URL
         value: https://live-streaming-backend.onrender.com
